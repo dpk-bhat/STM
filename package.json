@@ -4,11 +4,13 @@
   "description": "Software Testing Assignment",
   "main": "mobileNoMaxPlus.spec.js",
   "scripts": {
-    "test": "jasmine mobileNoMaxPlus.spec.js"
+    "test": "npx mocha --timeout 10000 --spec testScript.js  ",
+    "generate-report": "npx mocha --timeout 10000 --spec testScript.js --reporter mochawesome"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.3.6",
     "chromedriver": "101.0.0",
     "geckodriver": "^1.22.3",
     "jasmine": "^4.1.0",
