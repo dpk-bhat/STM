@@ -1,0 +1,100 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-06-03T17:33:32.869Z",
+    "end": "2022-06-03T17:33:39.096Z",
+    "duration": 6227,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "f1a29867-800b-45f7-94e0-e7e45454dbf2",
+      "title": "",
+      "fullFile": "C:\\Users\\hp\\OneDrive\\Documents\\GitHub\\STM\\testScript.js",
+      "file": "\\testScript.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b6ee3879-05cf-4f42-8cbc-897df21d815f",
+          "title": "STM Assignment",
+          "fullFile": "C:\\Users\\hp\\OneDrive\\Documents\\GitHub\\STM\\testScript.js",
+          "file": "\\testScript.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Mobile Number: Nominal & Password: Nominal -> Test Case: Valid ",
+              "fullTitle": "STM Assignment Mobile Number: Nominal & Password: Nominal -> Test Case: Valid ",
+              "timedOut": false,
+              "duration": 6219,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let driver = await new Builder().forBrowser(\"chrome\").build();\nawait driver.get(\"https://www.instagram.com/accounts/emailsignup/?hl=en\");\nawait driver.getTitle();\ndriver.manage().setTimeouts({implicit: 10000});\nlet emailOrPhone = await driver.findElement(By.name(\"emailOrPhone\"));\nawait emailOrPhone.sendKeys(\"+918762840329\");\nlet username = await driver.findElement(By.name(\"username\"));\nawait username.sendKeys(\"qwertymnbv2204\");\nawait delay(1000);\nlet password = await driver.findElement(By.name(\"password\"));\nawait password.sendKeys(\"test@123\");\nlet fullName = await driver.findElement(By.name(\"fullName\"));\nawait fullName.sendKeys(\"Linus Torvalds\");\nawait delay(1000);\ntickMarks = await driver.findElements(By.xpath(\"//span[contains(@class, 'coreSpriteInputAccepted')]\"));\nlet tickMarksArr = Object.entries(tickMarks);\nexpect(tickMarksArr.length).to.equal(3);\nawait delay(1000);\nlet signUp = await driver.findElement(By.xpath(\"//button[@type='submit']\")).isEnabled()\nexpect(signUp).to.equal(true);\nawait driver.quit();",
+              "err": {},
+              "uuid": "fa19037b-b189-4f33-a624-ebad85f84a93",
+              "parentUUID": "b6ee3879-05cf-4f42-8cbc-897df21d815f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "fa19037b-b189-4f33-a624-ebad85f84a93"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6219,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
