@@ -4,8 +4,9 @@
   "description": "Software Testing Assignment",
   "main": "mobileNoMaxPlus.spec.js",
   "scripts": {
-    "test": "npx mocha --timeout 10000 --spec testScript.js  ",
-    "generate-report": "npx mocha --timeout 10000 --spec testScript.js --reporter mochawesome"
+    "test": "npx mocha --timeout 10000 --spec testScript.js",
+    "generate-report": "npx mocha --timeout 10000 --spec testScript.js --reporter mochawesome",
+    "browse": "node test.js"
   },
   "author": "",
   "license": "ISC",
