@@ -1,4 +1,5 @@
 const { Builder, By, Key, until } = require("selenium-webdriver");
+let chrome = require('selenium-webdriver/chrome');
 const chai= require("chai");
 const expect = chai.expect;
 const assert = chai.assert;
@@ -11,7 +12,9 @@ function delay(milliseconds){
 }
 describe('STM Assignment', () => {
   it('Mobile Number: Nominal & Password: Nominal -> Test Case: Valid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -41,7 +44,9 @@ describe('STM Assignment', () => {
   });
 
   it('Sign: Inavlid, Mobile Number: Nominal & Password: Nominal -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -75,7 +80,9 @@ describe('STM Assignment', () => {
   });
 
   it('Mobile Number: Nominal & Password: Min- -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -105,7 +112,9 @@ describe('STM Assignment', () => {
   });
 
   it('Mobile Number: Nominal & Password: Min -> Test Case: Valid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -135,7 +144,9 @@ describe('STM Assignment', () => {
   });
 
   it('Mobile Number: Min- & Password: Nominal -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -169,7 +180,9 @@ describe('STM Assignment', () => {
   });
 
   it('Mobile Number: Max+ & Password: Min -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -203,7 +216,9 @@ describe('STM Assignment', () => {
   });
 
   it('Mobile Number: Nominal & Password: Min- -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
@@ -236,8 +251,10 @@ describe('STM Assignment', () => {
     await driver.quit();
   });
 
-  xit('Mobile Number: Min- & Password: Nominal -> Test Case: Invalid ', async () => {
-    let driver = await new Builder().forBrowser("chrome").build();
+  it('Mobile Number: Min- & Password: Nominal -> Test Case: Invalid ', async () => {
+    var options = new chrome.Options();
+    options.addArguments("--incognito");
+    let driver = await new Builder().forBrowser("chrome").setChromeOptions(options).build();
     await driver.get("https://www.instagram.com/accounts/emailsignup/?hl=en");
     await driver.getTitle();
     driver.manage().setTimeouts({implicit: 10000});
